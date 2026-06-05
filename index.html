@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Minimalist Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="screen">
+            <div class="previous-operand" id="previous-display"></div>
+            <div class="current-operand" id="current-display">0</div>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn function" onclick="clearScreen()">AC</button>
+            <button class="btn function" onclick="deleteNumber()">DEL</button>
+            <button class="btn function" onclick="appendOperator('%')">%</button>
+            <button class="btn operator" onclick="appendOperator('/')">÷</button>
+
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn operator" onclick="appendOperator('*')">×</button>
+
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn operator" onclick="appendOperator('-')">-</button>
+
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn operator" onclick="appendOperator('+')">+</button>
+
+            <button class="btn zero" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+            <button class="btn equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="paywall-modal">
+        <div class="modal-card">
+            <h2>✨ Unlock Premium Math ✨</h2>
+            <p class="modal-subtitle">You've reached your limit of free basic operations. Select a tier to view your answer!</p>
+            
+            <div class="plans">
+                <div class="plan-card" id="plan-basic" onclick="selectPlan('basic')">
+                    <h3>Basic Solver</h3>
+                    <p class="price">$4.99<span>/mo</span></p>
+                    <ul>
+                        <li>Addition & Subtraction</li>
+                        <li>Standard Speeds</li>
+                    </ul>
+                </div>
+                <div class="plan-card popular" id="plan-quantum" onclick="selectPlan('quantum')">
+                    <div class="badge">Most Popular</div>
+                    <h3>Quantum Einstein</h3>
+                    <p class="price">$12.99<span>/mo</span></p>
+                    <ul>
+                        <li>Advanced Operators</li>
+                        <li>Instant Results</li>
+                        <li>No Ads on Screen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="pay-btn" id="pay-button" onclick="revealPrankAndAnswer()">Unlock Answer Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
